@@ -1,0 +1,104 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/fluid/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+8
+(
+    atmosphere
+    {
+        type            patch;
+        nFaces          76;
+        startFace       5654;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          34;
+        startFace       5730;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          34;
+        startFace       5764;
+    }
+    frontAndBack
+    {
+        type            empty;
+        inGroups        List<word> 1(empty);
+        nFaces          5808;
+        startFace       5798;
+    }
+    nonCoupleRotating
+    {
+        type            wall;
+        inGroups        List<word> 
+2
+(
+wall
+nonCouple
+)
+;
+        nFaces          16;
+        startFace       11606;
+    }
+    nonCoupleStationary
+    {
+        type            wall;
+        inGroups        List<word> 
+2
+(
+wall
+nonCouple
+)
+;
+        nFaces          32;
+        startFace       11622;
+    }
+    fluid_to_solid
+    {
+        type            mappedWall;
+        inGroups        List<word> 
+2
+(
+wall
+mapped
+)
+;
+        nFaces          76;
+        startFace       11654;
+        neighbourRegion solid;
+        neighbourPatch  solid_to_fluid;
+        transformType   none;
+    }
+    fluid_to_roller
+    {
+        type            mappedWall;
+        inGroups        List<word> 
+2
+(
+wall
+mapped
+)
+;
+        nFaces          40;
+        startFace       11730;
+        neighbourRegion roller;
+        neighbourPatch  roller_to_fluid;
+        transformType   none;
+    }
+)
+
+// ************************************************************************* //
