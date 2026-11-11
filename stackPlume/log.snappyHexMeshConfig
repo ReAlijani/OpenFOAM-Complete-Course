@@ -1,0 +1,51 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 14-a4867fc914c1
+Exec   : snappyHexMeshConfig -bounds (-50 -200 0)(950 200 200) -nCells (40 16 8) -clearBoundary -xMinPatch inletWind patch -zMinPatch ground wall -defaultPatch outlet patch -insidePoint (0 0 50) -refinementDists (stack 5 5) -refinementBoxes 
+                         ((0 -10 0) (10 10 20) 2)
+                         ((-50 -80 0) (950 80 200) 1)
+                     
+Date   : Nov 02 2026
+Time   : 16:15:36
+Host   : "Reza"
+PID    : 40328
+I/O    : uncollated
+Case   : /home/reza_al/Desktop/stackPlume
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Writing mesh configuration files to 'system'
+
+Bounding box specified by '-bounds' option: (-50 -200 0) (950 200 200)
+Case contains the following surface geometry files:
++ stack
+  + File: "stack.obj"
+  + Bounding box: (-2 -1.99972 0) (2 1.99972 20)
+  + Closed surface
+  + External boundary surface
+  + Inlet regions: inlet
+
+Specified bounding box contains the overall bounding box
+Specified bounding box is > (1.5 * overall bounding box)
+**Assuming this is an external flow**
+
+Surface bounding box is (-50 -200 0) (950 200 200)
+Bounding box is now (-50 -200 0) (950 200 200)
+Using background mesh nCells (40 16 8)
+
+Adding defaultPatch 'outlet' of type 'patch'
+Adding patch 'inletWind' of type 'patch'
+Adding patch 'ground' of type 'wall'
+
+End
+

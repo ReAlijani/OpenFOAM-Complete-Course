@@ -1,0 +1,71 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  14
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 14-a4867fc914c1
+Exec   : blockMesh
+Date   : Nov 02 2026
+Time   : 16:15:37
+Host   : "Reza"
+PID    : 40330
+I/O    : uncollated
+Case   : /home/reza_al/Desktop/stackPlume
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reading "blockMeshDict"
+
+Creating block mesh from
+    "system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Basic statistics
+    Number of internal faces : 0
+    Number of boundary faces : 6
+    Number of defined boundary faces : 6
+    Number of undefined boundary faces : 0
+
+Checking topology
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 25
+        j : 25
+        k : 25
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (-50 -200 0) (950 200 200)
+  nPoints: 6273
+  nCells: 5120
+  nFaces: 16448
+  nInternalFaces: 14272
+----------------
+Patches
+----------------
+  patch 0 (start: 14272 size: 128) name: inletWind
+  patch 1 (start: 14400 size: 640) name: ground
+  patch 2 (start: 15040 size: 1408) name: outlet
+
+End
+
